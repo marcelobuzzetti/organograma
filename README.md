@@ -3,26 +3,25 @@
 Representação estruturada da hierarquia e seções da 2ª Companhia de Comunicação Mecanizada.
 
 ```mermaid
-graph TD
+graph TB
     CMT[Cap LUIS COUTINO<br/>CMT]
-    
     CMT --> SCMT[1º Ten BONATTI<br/>SCMT/S2]
     
-    CMT --> S1[SEÇÃO S1]
-    CMT --> S2[SEÇÃO S2]
-    CMT --> S3[SEÇÃO S3]
-    CMT --> S4[SEÇÃO S4]
-    CMT --> SAUDE[SEÇÃO SAÚDE]
-    CMT --> APROV[SEÇÃO APROV]
-    CMT --> RP[SEÇÃO RP]
-    CMT --> GARAGEM[SEÇÃO GARAGEM]
-    CMT --> ENCMAT[SEÇÃO ENC MAT]
-    CMT --> STI[SEÇÃO STI]
-    CMT --> SALCBDA[SALC BDA]
-    CMT --> SPP[SEÇÃO SPP]
-    CMT --> SIP[SEÇÃO SIP]
-    CMT --> MNTCOM[MNT COM]
-    CMT --> ALMOX[ALMOX]
+    SCMT --> S1[SEÇÃO S1]
+    S1 --> S2[SEÇÃO S2]
+    S2 --> S3[SEÇÃO S3]
+    S3 --> S4[SEÇÃO S4]
+    S4 --> SAUDE[SEÇÃO SAÚDE]
+    SAUDE --> APROV[SEÇÃO APROV]
+    APROV --> RP[SEÇÃO RP]
+    RP --> GARAGEM[SEÇÃO GARAGEM]
+    GARAGEM --> ENCMAT[SEÇÃO ENC MAT]
+    ENCMAT --> STI[SEÇÃO STI]
+    STI --> SALCBDA[SALC BDA]
+    SALCBDA --> SPP[SEÇÃO SPP]
+    SPP --> SIP[SEÇÃO SIP]
+    SIP --> MNTCOM[MNT COM]
+    MNTCOM --> ALMOX[ALMOX]
     
     S1 --> S1_1[2º Ten MASTROPAOLO]
     S1 --> S1_2[1º Sgt FERREIRA]
