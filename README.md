@@ -107,11 +107,12 @@ Exemplos de cores:
 ### Exemplo Completo
 
 ```mermaid
-SCMT --> NOVA_SECAO[NOVA SEÇÃO]
-NOVA_SECAO --> NS_1[Cap COMANDANTE]
-NS_1 --> NS_2[1º Ten ADJUNTO]
-NS_2 --> NS_3[3º Sgt OPERADOR]
-style NOVA_SECAO fill:#ccffcc
+graph TB
+    SCMT --> NOVA_SECAO[NOVA SEÇÃO]
+    NOVA_SECAO --> NS_1[Cap COMANDANTE]
+    NS_1 --> NS_2[1º Ten ADJUNTO]
+    NS_2 --> NS_3[3º Sgt OPERADOR]
+    style NOVA_SECAO fill:#ccffcc
 ```
 
 ## 🛠️ Tecnologias Utilizadas
