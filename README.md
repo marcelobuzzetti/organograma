@@ -1,3 +1,8 @@
+# Organograma da 2ª Cia Com Mec
+
+Representação estruturada da hierarquia e seções da 2ª Companhia de Comunicação Mecanizada.
+
+```mermaid
 graph TD
     CMT[Cap LUIS COUTINO<br/>CMT]
     
@@ -73,3 +78,4 @@ graph TD
     
     style CMT fill:#ff9999
     style SCMT fill:#ffcc99
+```
