@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organograma da 2ª Cia Com Mec</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+            background: #f8f9fa;
+            position: relative;
+        }
+        
+        .diagram-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .diagram-wrapper {
+            overflow: auto;
+            position: relative;
+            width: 100%;
+            height: 800px;
+        }
+        
+        .mermaid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+        }
+        
+        .zoom-controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+        
+        .zoom-btn {
+            background: #2a5298;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            width: 45px;
+            height: 45px;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .zoom-btn:hover {
+            background: #1e3c72;
+            transform: scale(1.1);
+        }
+        
+        .zoom-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .zoom-level {
+            background: white;
+            color: #2a5298;
+            border: 2px solid #2a5298;
+            border-radius: 8px;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            header p {
+                font-size: 1em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .diagram-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Organograma da 2ª Cia Com Mec</h1>
+            <p>Representação estruturada da hierarquia e seções da 2ª Companhia de Comunicação Mecanizada</p>
+        </header>
+        
+        <div class="content">
+            <div class="diagram-container">
+                <div class="zoom-controls">
+                    <button class="zoom-btn" id="zoomIn" title="Aumentar zoom">+</button>
+                    <div class="zoom-level" id="zoomLevel">100%</div>
+                    <button class="zoom-btn" id="zoomOut" title="Diminuir zoom">−</button>
+                    <button class="zoom-btn" id="resetZoom" title="Resetar zoom">⟲</button>
+                </div>
+                <div class="diagram-wrapper" id="diagramWrapper">
+                    <div class="mermaid" id="mermaidDiagram">
+graph TB
+    CMT[Cap LUIS COUTINO<br/>CMT]
+    CMT --> SCMT[1º Ten BONATTI<br/>SCMT/S2]
+    
+    SCMT --> S1[SEÇÃO S1]
+    SCMT --> S2[SEÇÃO S2]
+    SCMT --> S3[SEÇÃO S3]
+    SCMT --> S4[SEÇÃO S4]
+    SCMT --> SAUDE[SEÇÃO SAÚDE]
+    SCMT --> APROV[SEÇÃO APROV]
+    SCMT --> RP[SEÇÃO RP]
+    SCMT --> GARAGEM[SEÇÃO GARAGEM]
+    SCMT --> ENCMAT[SEÇÃO ENC MAT]
+    SCMT --> STI[SEÇÃO STI]
+    SCMT --> SALCBDA[SALC BDA]
+    SCMT --> SPP[SEÇÃO SPP]
+    SCMT --> SIP[SEÇÃO SIP]
+    SCMT --> MNTCOM[MNT COM]
+    SCMT --> ALMOX[ALMOX]
+    
+    S1 --> S1_1[2º Ten MASTROPAOLO]
+    S1_1 --> S1_2[1º Sgt FERREIRA]
+    S1_2 --> S1_3[1º Sgt SALVADOR]
+    S1_3 --> S1_4[3º Sgt VERAS]
+    S1_4 --> S1_5[3º Sgt BITTENCOURT]
+    S1_5 --> S1_6[3º Sgt NASCIMENTO]
+    
+    S2 --> S2_1[1º Sgt SOUZA]
+    S2_1 --> S2_2[3º Sgt LARA]
+    
+    S3 --> S3_1[2º Ten MALTA]
+    S3_1 --> S3_2[1º Sgt DINIZ]
+    S3_2 --> S3_3[3º Sgt HAKME]
+    S3_3 --> S3_4[3º Sgt EDER]
+    
+    S4 --> S4_1[1º Ten DOS SANTOS]
+    S4_1 --> S4_2[3º Sgt COUTO]
+    S4_2 --> S4_3[3º Sgt ARTUR]
+    
+    SAUDE --> SAUDE_1[2º Ten NETO]
+    SAUDE_1 --> SAUDE_2[2º Ten NISHIMURA]
+    SAUDE_2 --> SAUDE_3[3º Sgt MILATO]
+    
+    APROV --> APROV_1[1º Ten ROSA]
+    APROV_1 --> APROV_2[1º Sgt CAMBRAIA]
+    APROV_2 --> APROV_3[3º Sgt GARUZI]
+    APROV_3 --> APROV_4[3º Sgt BENTO]
+    
+    RP --> RP_1[S Ten CARLOS GOMES]
+    RP_1 --> RP_2[2º Sgt RIELLA]
+    
+    GARAGEM --> GARAGEM_1[1º Sgt LEANDRO]
+    GARAGEM_1 --> GARAGEM_2[3º Sgt ESPERANCA]
+    
+    ENCMAT --> ENCMAT_1[1º Sgt MIYASHIRO]
+    ENCMAT_1 --> ENCMAT_2[3º Sgt PEREIRA]
+    
+    STI --> STI_1[2º Sgt VINICIUS LIMA]
+    STI_1 --> STI_2[3º Sgt DIONISIO]
+    STI_2 --> STI_3[3º Sgt SARAGOSSA]
+    
+    SALCBDA --> SALCBDA_1[2º Sgt ERIVELTON]
+    
+    SPP --> SPP_1[2º Sgt GONZALEZ]
+    SPP_1 --> SPP_2[3º Sgt BANHARA]
+    
+    SIP --> SIP_1[3º Sgt FABIO BARBOSA]
+    
+    MNTCOM --> MNTCOM_1[3º Sgt CARVALHO]
+    
+    ALMOX --> ALMOX_1[3º Sgt ITALO SILVA]
+    
+    style CMT fill:#ff9999
+    style SCMT fill:#ffcc99
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 2ª Cia Com Mec - Todos os direitos reservados</p>
+        </footer>
+    </div>
+    
+    <script>
+        let currentScale = 1;
+        let translateX = 0;
+        let translateY = 0;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        
+        const mermaidDiagram = document.getElementById('mermaidDiagram');
+        const diagramWrapper = document.getElementById('diagramWrapper');
+        const zoomLevel = document.getElementById('zoomLevel');
+        const zoomInBtn = document.getElementById('zoomIn');
+        const zoomOutBtn = document.getElementById('zoomOut');
+        const resetZoomBtn = document.getElementById('resetZoom');
+        
+        function updateTransform() {
+            mermaidDiagram.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+            zoomLevel.textContent = Math.round(currentScale * 100) + '%';
+        }
+        
+        zoomInBtn.addEventListener('click', () => {
+            if (currentScale < 3) {
+                currentScale += 0.2;
+                updateTransform();
+            }
+        });
+        
+        zoomOutBtn.addEventListener('click', () => {
+            if (currentScale > 0.4) {
+                currentScale -= 0.2;
+                updateTransform();
+            }
+        });
+        
+        resetZoomBtn.addEventListener('click', () => {
+            currentScale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        });
+        
+        // Zoom com scroll do mouse
+        diagramWrapper.addEventListener('wheel', (e) => {
+            if (e.ctrlKey) {
+                e.preventDefault();
+                if (e.deltaY < 0 && currentScale < 3) {
+                    currentScale += 0.1;
+                } else if (e.deltaY > 0 && currentScale > 0.4) {
+                    currentScale -= 0.1;
+                }
+                updateTransform();
+            }
+        });
+        
+        // Arrastar diagrama
+        mermaidDiagram.addEventListener('mousedown', (e) => {
+            if (e.button === 0) {
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidDiagram.style.cursor = 'grabbing';
+                e.preventDefault();
+            }
+        });
+        
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+            }
+        });
+        
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                mermaidDiagram.style.cursor = 'grab';
+            }
+        });
+        
+        // Touch support para mobile
+        let touchStartX = 0;
+        let touchStartY = 0;
+        
+        mermaidDiagram.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                const touch = e.touches[0];
+                touchStartX = touch.clientX - translateX;
+                touchStartY = touch.clientY - translateY;
+            }
+        });
+        
+        mermaidDiagram.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1) {
+                e.preventDefault();
+                const touch = e.touches[0];
+                translateX = touch.clientX - touchStartX;
+                translateY = touch.clientY - touchStartY;
+                updateTransform();
+            }
+        });
+        
+        // Definir cursor inicial
+        mermaidDiagram.style.cursor = 'grab';
+    </script>
+</body>
+</html>
