@@ -1,80 +1,129 @@
 # Organograma da 2ª Cia Com Mec
 
-Representação estruturada da hierarquia e seções da 2ª Companhia de Comunicação Mecanizada.
+Representação visual e estruturada da hierarquia e seções da 2ª Companhia de Comunicações Mecanizada.
+
+## 📋 Descrição
+
+Este projeto contém o organograma completo da 2ª Cia Com Mec, incluindo:
+- Estrutura de comando
+- Todas as seções e seus integrantes
+- Hierarquia organizacional
+
+## 🚀 Como Visualizar Localmente
+
+### Opção 1: Visualização Interativa (Recomendado)
+
+1. **Baixe o repositório:**
+   ```bash
+   git clone https://github.com/seu-usuario/secoes.git
+   cd secoes
+   ```
+
+2. **Abra o arquivo HTML no navegador:**
+   - Navegue até a pasta do projeto
+   - Dê duplo clique no arquivo `index.html`
+   - OU abra seu navegador e pressione `Ctrl+O`, depois selecione `index.html`
+
+3. **Recursos disponíveis:**
+   - ✨ Zoom com botões `+` e `-`
+   - 🖱️ Arraste o diagrama clicando e movendo
+   - ⌨️ Zoom com `Ctrl + Scroll` do mouse
+   - 🔄 Botão reset para voltar ao estado inicial
+   - 📱 Compatível com dispositivos móveis
+
+### Opção 2: Visualização no GitHub
+
+Basta acessar este repositório no GitHub para ver o diagrama Mermaid renderizado automaticamente.
+
+## 📁 Arquivos do Projeto
+
+- `index.html` - Página interativa com zoom e navegação
+- `README.md` - Este arquivo
+
+## ✏️ Como Editar e Adicionar Militares
+
+Para adicionar ou editar militares no organograma, siga estes passos:
+
+### 1. Abra o arquivo `index.html` em um editor de texto
+
+Você pode usar qualquer editor como:
+- Notepad/Bloco de Notas
+- VS Code
+- Notepad++
+- Sublime Text
+
+### 2. Localize a seção do diagrama Mermaid
+
+Procure pela tag `<div class="mermaid">` no arquivo. O diagrama está entre as linhas que começam com `graph TB`.
+
+### 3. Adicionar um novo militar a uma seção existente
+
+**Exemplo: Adicionar um militar à SEÇÃO S1**
+
+Localize a última linha da SEÇÃO S1:
+```
+S1_5 --> S1_6[3º Sgt NASCIMENTO]
+```
+
+Adicione abaixo:
+```
+S1_6 --> S1_7[Posto NOME_DO_MILITAR]
+```
+
+### 4. Criar uma nova seção
+
+**Exemplo: Adicionar SEÇÃO COMUNICAÇÕES**
+
+1. Conecte a nova seção ao SCMT:
+```
+SCMT --> COMUNICACOES[SEÇÃO COMUNICAÇÕES]
+```
+
+2. Adicione os integrantes da seção:
+```
+COMUNICACOES --> COM_1[1º Sgt NOME_CHEFE]
+COM_1 --> COM_2[3º Sgt NOME_INTEGRANTE]
+```
+
+### 5. Alterar cores (opcional)
+
+No final do diagrama, antes de `</div>`, adicione:
+```
+style NOME_DA_SECAO fill:#cor_em_hexadecimal
+```
+
+Exemplos de cores:
+- `#ff9999` - Vermelho claro
+- `#ffcc99` - Laranja claro
+- `#99ff99` - Verde claro
+- `#99ccff` - Azul claro
+
+### 6. Salve e teste
+
+1. Salve o arquivo `index.html`
+2. Abra-o no navegador para verificar as alterações
+3. Se necessário, ajuste o código e recarregue a página (F5)
+
+### Exemplo Completo
 
 ```mermaid
-graph TB
-    CMT[Cap LUIS COUTINO<br/>CMT]
-    CMT --> SCMT[1º Ten BONATTI<br/>SCMT/S2]
-    
-    SCMT --> S1[SEÇÃO S1]
-    SCMT --> S2[SEÇÃO S2]
-    SCMT --> S3[SEÇÃO S3]
-    SCMT --> S4[SEÇÃO S4]
-    SCMT --> SAUDE[SEÇÃO SAÚDE]
-    SCMT --> APROV[SEÇÃO APROV]
-    SCMT --> RP[SEÇÃO RP]
-    SCMT --> GARAGEM[SEÇÃO GARAGEM]
-    SCMT --> ENCMAT[SEÇÃO ENC MAT]
-    SCMT --> STI[SEÇÃO STI]
-    SCMT --> SALCBDA[SALC BDA]
-    SCMT --> SPP[SEÇÃO SPP]
-    SCMT --> SIP[SEÇÃO SIP]
-    SCMT --> MNTCOM[MNT COM]
-    SCMT --> ALMOX[ALMOX]
-    
-    S1 --> S1_1[2º Ten MASTROPAOLO]
-    S1_1 --> S1_2[1º Sgt FERREIRA]
-    S1_2 --> S1_3[1º Sgt SALVADOR]
-    S1_3 --> S1_4[3º Sgt VERAS]
-    S1_4 --> S1_5[3º Sgt BITTENCOURT]
-    S1_5 --> S1_6[3º Sgt NASCIMENTO]
-    
-    S2 --> S2_1[1º Sgt SOUZA]
-    S2_1 --> S2_2[3º Sgt LARA]
-    
-    S3 --> S3_1[2º Ten MALTA]
-    S3_1 --> S3_2[1º Sgt DINIZ]
-    S3_2 --> S3_3[3º Sgt HAKME]
-    S3_3 --> S3_4[3º Sgt EDER]
-    
-    S4 --> S4_1[1º Ten DOS SANTOS]
-    S4_1 --> S4_2[3º Sgt COUTO]
-    S4_2 --> S4_3[3º Sgt ARTUR]
-    
-    SAUDE --> SAUDE_1[2º Ten NETO]
-    SAUDE_1 --> SAUDE_2[2º Ten NISHIMURA]
-    SAUDE_2 --> SAUDE_3[3º Sgt MILATO]
-    
-    APROV --> APROV_1[1º Ten ROSA]
-    APROV_1 --> APROV_2[1º Sgt CAMBRAIA]
-    APROV_2 --> APROV_3[3º Sgt GARUZI]
-    APROV_3 --> APROV_4[3º Sgt BENTO]
-    
-    RP --> RP_1[S Ten CARLOS GOMES]
-    RP_1 --> RP_2[2º Sgt RIELLA]
-    
-    GARAGEM --> GARAGEM_1[1º Sgt LEANDRO]
-    GARAGEM_1 --> GARAGEM_2[3º Sgt ESPERANCA]
-    
-    ENCMAT --> ENCMAT_1[1º Sgt MIYASHIRO]
-    ENCMAT_1 --> ENCMAT_2[3º Sgt PEREIRA]
-    
-    STI --> STI_1[2º Sgt VINICIUS LIMA]
-    STI_1 --> STI_2[3º Sgt DIONISIO]
-    STI_2 --> STI_3[3º Sgt SARAGOSSA]
-    
-    SALCBDA --> SALCBDA_1[2º Sgt ERIVELTON]
-    
-    SPP --> SPP_1[2º Sgt GONZALEZ]
-    SPP_1 --> SPP_2[3º Sgt BANHARA]
-    
-    SIP --> SIP_1[3º Sgt FABIO BARBOSA]
-    
-    MNTCOM --> MNTCOM_1[3º Sgt CARVALHO]
-    
-    ALMOX --> ALMOX_1[3º Sgt ITALO SILVA]
-    
-    style CMT fill:#ff9999
-    style SCMT fill:#ffcc99
+SCMT --> NOVA_SECAO[NOVA SEÇÃO]
+NOVA_SECAO --> NS_1[Cap COMANDANTE]
+NS_1 --> NS_2[1º Ten ADJUNTO]
+NS_2 --> NS_3[3º Sgt OPERADOR]
+style NOVA_SECAO fill:#ccffcc
 ```
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Mermaid.js** - Geração de diagramas
+- **HTML5/CSS3** - Interface visual
+- **JavaScript** - Interatividade e controles de zoom
+
+## 📝 Licença
+
+© 2026 2ª Cia Com Mec - Todos os direitos reservados
+
+---
+
+**Atualizado em:** Janeiro de 2026
